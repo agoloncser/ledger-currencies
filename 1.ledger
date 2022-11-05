@@ -40,9 +40,57 @@ P 2015/01/01 GBP 200 JPY
 
 ; Try some reports:
 ;   ledger -f 1.ledger bal
+;            10.00 CAD
+;             5.00 GBP
+;             1000 JPY  Assets
+;            10.00 CAD    CAD
+;             5.00 GBP    GBP
+;             1000 JPY    JPY
+;           -10.00 CAD
+;            -5.00 GBP
+;            -1000 JPY  Equity
+;           -10.00 CAD    CAD
+;            -5.00 GBP    GBP
+;            -1000 JPY    JPY
+; --------------------
+;                    0
+
 ;   ledger -f 1.ledger bal -X CAD
+;            30.00 CAD  Assets
+;            10.00 CAD    CAD
+;            10.00 CAD    GBP
+;            10.00 CAD    JPY
+;           -30.00 CAD  Equity
+;           -10.00 CAD    CAD
+;           -10.00 CAD    GBP
+;           -10.00 CAD    JPY
+; --------------------
+;                    0
+
 ;   ledger -f 1.ledger bal -X GBP
+;            15.00 GBP  Assets
+;             5.00 GBP    CAD
+;             5.00 GBP    GBP
+;             5.00 GBP    JPY
+;           -15.00 GBP  Equity
+;            -5.00 GBP    CAD
+;            -5.00 GBP    GBP
+;            -5.00 GBP    JPY
+; --------------------
+;                    0
+
 ;   ledger -f 1.ledger bal -X JPY
+;             3000 JPY  Assets
+;             1000 JPY    CAD
+;             1000 JPY    GBP
+;             1000 JPY    JPY
+;            -3000 JPY  Equity
+;            -1000 JPY    CAD
+;            -1000 JPY    GBP
+;            -1000 JPY    JPY
+; --------------------
+;                    0
+
 ;
 ; Notice that the accounts balance and that the conversion
 ; is correct in each case.
